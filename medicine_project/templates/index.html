@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Care Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+
+  <style>
+        .logo {
+            width: 50px;
+            height: 50px;
+            color: black;
+            margin-top: 0;
+            margin-left: 2px;
+        }
+
+        .myimg {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+        
+        .symptom-examples {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .symptom-examples h6 {
+            color: #0d6efd;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .symptom-tag {
+            display: inline-block;
+            background-color: #e7f3ff;
+            color: #0d6efd;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border: 1px solid #b8daff;
+        }
+        
+        .symptom-tag:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+    </style>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="logo">
+                <img class="myimg" src="{{ url_for('static', filename='logo.png') }}" alt="">
+            </div>
+
+            <a class="navbar-brand" href="#">Health Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/developer">Developer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/debug" target="_blank">Debug</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<!-- main form of page -->
+<h1 class="mt-4 my-4 text-center text-green">Health Care Center</h1>
+
+<!-- Symptom Examples Section -->
+<div class="container my-3">
+    <div class="symptom-examples">
+        <h6>💡 Quick Symptom Selection (Click to add):</h6>
+        <div id="symptomTags">
+            <span class="symptom-tag" onclick="addSymptom('itching')">itching</span>
+            <span class="symptom-tag" onclick="addSymptom('skin_rash')">skin_rash</span>
+            <span class="symptom-tag" onclick="addSymptom('nodal_skin_eruptions')">nodal_skin_eruptions</span>
+            <span class="symptom-tag" onclick="addSymptom('continuous_sneezing')">continuous_sneezing</span>
+            <span class="symptom-tag" onclick="addSymptom('shivering')">shivering</span>
+            <span class="symptom-tag" onclick="addSymptom('chills')">chills</span>
+            <span class="symptom-tag" onclick="addSymptom('joint_pain')">joint_pain</span>
+            <span class="symptom-tag" onclick="addSymptom('stomach_pain')">stomach_pain</span>
+            <span class="symptom-tag" onclick="addSymptom('acidity')">acidity</span>
+            <span class="symptom-tag" onclick="addSymptom('vomiting')">vomiting</span>
+            <span class="symptom-tag" onclick="addSymptom('fatigue')">fatigue</span>
+            <span class="symptom-tag" onclick="addSymptom('high_fever')">high_fever</span>
+            <span class="symptom-tag" onclick="addSymptom('headache')">headache</span>
+            <span class="symptom-tag" onclick="addSymptom('nausea')">nausea</span>
+            <span class="symptom-tag" onclick="addSymptom('loss_of_appetite')">loss_of_appetite</span>
+            <span class="symptom-tag" onclick="addSymptom('abdominal_pain')">abdominal_pain</span>
+            <span class="symptom-tag" onclick="addSymptom('diarrhoea')">diarrhoea</span>
+            <span class="symptom-tag" onclick="addSymptom('cough')">cough</span>
+            <span class="symptom-tag" onclick="addSymptom('breathlessness')">breathlessness</span>
+        </div>
+        <small class="text-muted">
+            ℹ️ Use underscores (_) instead of spaces. Example: stomach_pain not "stomach pain"
+            | <a href="/debug" target="_blank">View all valid symptoms</a>
+        </small>
+    </div>
+</div>
+
+<div class="container my-4 mt-4" style="background: black; color: white; border-radius: 15px; padding: 40px;">
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="symptoms">Enter Your Symptoms (comma-separated):</label>
+            <input type="text" class="form-control" id="symptoms" name="symptoms" 
+                   placeholder="Example: itching, skin_rash, fatigue, vomiting"
+                   style="font-size: 16px; padding: 12px;">
+            <small class="text-light mt-2" style="display: block;">
+                ⚠️ Important: Use exact symptom names with underscores (e.g., stomach_pain, high_fever, skin_rash)
+            </small>
+        </div>
+        <br>
+
+        <button type="button" id="startSpeechRecognition" class="btn btn-primary" style="display:none; margin-left:3px;border:1px solid white; border-radius:20px;">
+            Start Speech Recognition
+        </button>
+        <br>
+
+        <div name="mysysms" id="transcription"></div>
+
+        {% if message %}
+        <div class="alert alert-info mt-3" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        <br>
+
+        <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 14px; margin-bottom: 5px;">
+            🔍 Predict Disease
+        </button>
+        
+        <button type="button" class="btn btn-secondary btn-lg" onclick="clearSymptoms()" 
+                style="width: 100%; padding: 14px; margin-top: 10px;">
+            🗑️ Clear
+        </button>
+    </form>
+</div>
+
+{% if predicted_disease %}
+
+<!-- Results -->
+<h1 class="text-center my-4 mt-4">Our AI System Results</h1>
+<div class="container">
+
+    <div class="result-container">
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#diseaseModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Disease</button>
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#descriptionModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#268AF3 ;color:black;">Description</button>
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#precautionModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F371F9 ;color:black;">Precaution</button>
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#medicationsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px;border-radius:5px; background:#F8576F ;color:black;">Medications</button>
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#workoutsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#99F741 ;color:black;">Workouts</button>
+        <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#dietsModal" style="padding:4px; margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#E5E23D;color:black;">Diets</button>
+    </div>
+</div>
+
+{% endif %}
+
+<!-- Disease Modal -->
+<div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="diseaseModalLabel">Predicted Disease</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ predicted_disease }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ dis_des }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Precaution Modal -->
+<div class="modal fade" id="precautionModal" tabindex="-1" aria-labelledby="precautionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="precautionModalLabel">Precaution</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    {% for i in my_precautions %}
+                        <li>{{ i }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Medications Modal -->
+<div class="modal fade" id="medicationsModal" tabindex="-1" aria-labelledby="medicationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="medicationsModalLabel">Medications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    {% for i in medications %}
+                        <li>{{ i }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Workouts Modal -->
+<div class="modal fade" id="workoutsModal" tabindex="-1" aria-labelledby="workoutsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="workoutsModalLabel">Workouts</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    {% for i in workout %}
+                        <li>{{ i }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Diets Modal -->
+<div class="modal fade" id="dietsModal" tabindex="-1" aria-labelledby="dietsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #020606; color:white;">
+                <h5 class="modal-title" id="dietsModalLabel">Diets</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    {% for i in my_diet %}
+                        <li>{{ i }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to add symptom when clicking tag
+    function addSymptom(symptom) {
+        const input = document.getElementById('symptoms');
+        const currentValue = input.value.trim();
+        
+        // Check if symptom already exists
+        const symptoms = currentValue.split(',').map(s => s.trim());
+        if (symptoms.includes(symptom)) {
+            return; // Already added
+        }
+        
+        // Add symptom
+        if (currentValue === '') {
+            input.value = symptom;
+        } else {
+            input.value = currentValue + ', ' + symptom;
+        }
+        
+        // Visual feedback
+        event.target.style.backgroundColor = '#28a745';
+        event.target.style.color = 'white';
+        setTimeout(() => {
+            event.target.style.backgroundColor = '#e7f3ff';
+            event.target.style.color = '#0d6efd';
+        }, 300);
+    }
+    
+    // Function to clear symptoms
+    function clearSymptoms() {
+        document.getElementById('symptoms').value = '';
+    }
+
+    // Speech recognition (hidden but functional)
+    const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
+    const transcriptionDiv = document.getElementById('transcription');
+
+    if (startSpeechRecognitionButton) {
+        startSpeechRecognitionButton.addEventListener('click', startSpeechRecognition);
+    }
+
+    function startSpeechRecognition() {
+        const SpeechAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechAPI) {
+            alert('Speech recognition not supported in this browser.');
+            return;
+        }
+        const recognition = new SpeechAPI();
+        recognition.lang = 'en-US';
+        recognition.onresult = function (event) {
+            const result = event.results[0][0].transcript;
+            transcriptionDiv.textContent = result;
+            document.getElementById('symptoms').value = result;
+        };
+        recognition.onend = function () {
+            console.log('Speech recognition ended.');
+        };
+        recognition.start();
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

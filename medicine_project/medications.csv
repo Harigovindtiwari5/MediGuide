@@ -1,0 +1,206 @@
+Disease,Medication
+Fungal infection,Antifungal creams (Clotrimazole)
+Fungal infection,Fluconazole (oral)
+Fungal infection,Terbinafine
+Fungal infection,Ketoconazole shampoo
+Fungal infection,Miconazole
+Allergy,Antihistamines (Cetirizine)
+Allergy,Loratadine
+Allergy,Fexofenadine
+Allergy,Nasal corticosteroids
+Allergy,Epinephrine (severe cases)
+GERD,Omeprazole (PPI)
+GERD,Pantoprazole
+GERD,Ranitidine (H2 blocker)
+GERD,Antacids (Gelusil)
+GERD,Domperidone
+Chronic cholestasis,Ursodeoxycholic acid
+Chronic cholestasis,Cholestyramine
+Chronic cholestasis,Rifampicin (for itching)
+Chronic cholestasis,Vitamin K supplements
+Chronic cholestasis,Fat-soluble vitamins (A/D/E/K)
+Drug Reaction,Discontinue offending drug
+Drug Reaction,Antihistamines
+Drug Reaction,Corticosteroids (Prednisolone)
+Drug Reaction,Epinephrine (anaphylaxis)
+Drug Reaction,IV fluids (if needed)
+Peptic ulcer disease,Omeprazole
+Peptic ulcer disease,Amoxicillin + Clarithromycin (H. pylori)
+Peptic ulcer disease,Antacids
+Peptic ulcer disease,Sucralfate
+Peptic ulcer disease,Misoprostol
+AIDS,Antiretroviral therapy (ART)
+AIDS,Tenofovir + Emtricitabine
+AIDS,Dolutegravir
+AIDS,Cotrimoxazole (prophylaxis)
+AIDS,Fluconazole (opportunistic infections)
+Diabetes,Metformin
+Diabetes,Insulin (Type 1)
+Diabetes,Glipizide
+Diabetes,Sitagliptin
+Diabetes,Empagliflozin
+Gastroenteritis,Oral Rehydration Salts (ORS)
+Gastroenteritis,Ondansetron (anti-nausea)
+Gastroenteritis,Loperamide
+Gastroenteritis,Probiotics
+Gastroenteritis,Zinc supplements (children)
+Bronchial Asthma,Salbutamol inhaler
+Bronchial Asthma,Budesonide inhaler (ICS)
+Bronchial Asthma,Montelukast
+Bronchial Asthma,Ipratropium bromide
+Bronchial Asthma,Prednisolone (acute attacks)
+Hypertension,Amlodipine
+Hypertension,Enalapril (ACE inhibitor)
+Hypertension,Losartan (ARB)
+Hypertension,Hydrochlorothiazide
+Hypertension,Atenolol (beta blocker)
+Migraine,Sumatriptan
+Migraine,Ibuprofen
+Migraine,Paracetamol
+Migraine,Propranolol (preventive)
+Migraine,Topiramate (preventive)
+Cervical spondylosis,Ibuprofen / Naproxen
+Cervical spondylosis,Muscle relaxants (Cyclobenzaprine)
+Cervical spondylosis,Physiotherapy
+Cervical spondylosis,Gabapentin (nerve pain)
+Cervical spondylosis,Diclofenac gel (topical)
+Paralysis (brain hemorrhage),Aspirin (ischemic stroke)
+Paralysis (brain hemorrhage),Warfarin / Heparin
+Paralysis (brain hemorrhage),tPA (clot buster - acute)
+Paralysis (brain hemorrhage),Physiotherapy
+Paralysis (brain hemorrhage),Mannitol (to reduce brain swelling)
+Jaundice,Ursodeoxycholic acid
+Jaundice,Rifampicin
+Jaundice,IV fluids
+Jaundice,Cholestyramine
+Jaundice,Treat underlying cause
+Malaria,Chloroquine
+Malaria,Artemisinin-based combination therapy (ACT)
+Malaria,Doxycycline (prophylaxis)
+Malaria,Primaquine (P. vivax)
+Malaria,Quinine (severe cases)
+Chicken pox,Acyclovir (antiviral)
+Chicken pox,Calamine lotion
+Chicken pox,Paracetamol (fever)
+Chicken pox,Antihistamines (itching)
+Chicken pox,Valacyclovir
+Dengue,Paracetamol (fever - NOT Aspirin)
+Dengue,IV fluids (dengue shock)
+Dengue,Platelet transfusion (if very low)
+Dengue,Oral rehydration
+Dengue,Rest and monitoring
+Typhoid,Ciprofloxacin
+Typhoid,Azithromycin
+Typhoid,Ceftriaxone (severe cases)
+Typhoid,Paracetamol (fever)
+Typhoid,Oral rehydration salts
+hepatitis A,Rest and supportive care
+hepatitis A,IV fluids
+hepatitis A,Anti-nausea medication
+hepatitis A,Vitamin supplements
+hepatitis A,Avoid alcohol and hepatotoxic drugs
+Hepatitis B,Tenofovir (antiviral)
+Hepatitis B,Entecavir
+Hepatitis B,Interferon alfa
+Hepatitis B,Lamivudine
+Hepatitis B,Vaccination (prevention)
+Hepatitis C,Sofosbuvir + Daclatasvir
+Hepatitis C,Ribavirin
+Hepatitis C,Ledipasvir + Sofosbuvir
+Hepatitis C,Glecaprevir + Pibrentasvir
+Hepatitis C,Elbasvir + Grazoprevir
+Hepatitis D,Pegylated Interferon alfa
+Hepatitis D,Tenofovir
+Hepatitis D,Bulevirtide (newer drug)
+Hepatitis D,Supportive care
+Hepatitis D,Treat Hepatitis B (coinfection)
+Hepatitis E,Rest and supportive care
+Hepatitis E,IV fluids
+Hepatitis E,Anti-nausea medication
+Hepatitis E,Ribavirin (severe/pregnancy cases)
+Hepatitis E,Avoid alcohol
+Alcoholic hepatitis,Prednisolone (corticosteroid)
+Alcoholic hepatitis,Pentoxifylline
+Alcoholic hepatitis,Thiamine (Vitamin B1)
+Alcoholic hepatitis,Nutritional support
+Alcoholic hepatitis,Complete alcohol abstinence
+Tuberculosis,Isoniazid
+Tuberculosis,Rifampicin
+Tuberculosis,Ethambutol
+Tuberculosis,Pyrazinamide
+Tuberculosis,DOTS (6-month regimen)
+Common Cold,Paracetamol / Ibuprofen
+Common Cold,Decongestants (Pseudoephedrine)
+Common Cold,Antihistamines (Chlorpheniramine)
+Common Cold,Saline nasal spray
+Common Cold,Cough syrup (Dextromethorphan)
+Pneumonia,Amoxicillin (community-acquired)
+Pneumonia,Azithromycin
+Pneumonia,Ceftriaxone (severe)
+Pneumonia,Levofloxacin
+Pneumonia,Oxygen therapy (if needed)
+Dimorphic hemmorhoids(piles),Hydrocortisone cream
+Dimorphic hemmorhoids(piles),Laxatives (lactulose)
+Dimorphic hemmorhoids(piles),Sitz bath
+Dimorphic hemmorhoids(piles),Diosmin + Hesperidin
+Dimorphic hemmorhoids(piles),Surgical banding (severe)
+Heart attack,Aspirin
+Heart attack,Heparin (anticoagulant)
+Heart attack,Nitroglycerin
+Heart attack,Beta blockers (Metoprolol)
+Heart attack,Statins (Atorvastatin)
+Varicose veins,Compression stockings
+Varicose veins,Diosmin + Hesperidin
+Varicose veins,Sclerotherapy
+Varicose veins,Laser treatment
+Varicose veins,Surgical stripping (severe)
+Hypothyroidism,Levothyroxine (T4 hormone)
+Hypothyroidism,Regular TSH monitoring
+Hypothyroidism,Liothyronine (T3 - if needed)
+Hypothyroidism,Selenium supplements
+Hypothyroidism,Vitamin D supplements
+Hyperthyroidism,Methimazole (antithyroid)
+Hyperthyroidism,Propylthiouracil (PTU)
+Hyperthyroidism,Propranolol (beta blocker for symptoms)
+Hyperthyroidism,Radioactive iodine therapy
+Hyperthyroidism,Thyroidectomy (surgery)
+Hypoglycemia,Glucose tablets / juice (immediate)
+Hypoglycemia,Glucagon injection (severe)
+Hypoglycemia,IV Dextrose (hospital)
+Hypoglycemia,Adjust diabetes medication dose
+Hypoglycemia,Frequent small meals
+Osteoarthristis,Paracetamol
+Osteoarthristis,Ibuprofen / Naproxen (NSAIDs)
+Osteoarthristis,Diclofenac gel (topical)
+Osteoarthristis,Glucosamine + Chondroitin
+Osteoarthristis,Corticosteroid injections
+Arthritis,Methotrexate (RA)
+Arthritis,Hydroxychloroquine
+Arthritis,NSAIDs (Ibuprofen / Naproxen)
+Arthritis,TNF inhibitors (Etanercept)
+Arthritis,Prednisolone (flare ups)
+(vertigo) Paroymsal Positional Vertigo,Epley maneuver (repositioning)
+(vertigo) Paroymsal Positional Vertigo,Meclizine (antivertigo)
+(vertigo) Paroymsal Positional Vertigo,Dimenhydrinate
+(vertigo) Paroymsal Positional Vertigo,Betahistine
+(vertigo) Paroymsal Positional Vertigo,Prochlorperazine
+Acne,Benzoyl peroxide
+Acne,Salicylic acid
+Acne,Tretinoin (Retinoid)
+Acne,Clindamycin (topical antibiotic)
+Acne,Doxycycline (oral - moderate/severe)
+Urinary tract infection,Nitrofurantoin
+Urinary tract infection,Trimethoprim-Sulfamethoxazole
+Urinary tract infection,Ciprofloxacin
+Urinary tract infection,Amoxicillin-Clavulanate
+Urinary tract infection,Fosfomycin
+Psoriasis,Topical corticosteroids
+Psoriasis,Vitamin D analogues (Calcipotriol)
+Psoriasis,Methotrexate
+Psoriasis,Biologics (Adalimumab)
+Psoriasis,Coal tar preparations
+Impetigo,Mupirocin cream (topical)
+Impetigo,Fusidic acid cream
+Impetigo,Amoxicillin (oral - widespread)
+Impetigo,Cephalexin
+Impetigo,Clean and cover the wound
